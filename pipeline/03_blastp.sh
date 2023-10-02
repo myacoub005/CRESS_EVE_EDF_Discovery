@@ -22,7 +22,8 @@ fi
 
 INDIR=ncbi_dataset/data
 DB=BLASTDB
-OUT=BLASTP
+CAP=BLASTP/CAP
+REP=BLASTP/REP
 
 IFS=,
 tail -n +2 ReferenceGenomes.csv | sed -n ${N}p | while read GENUS SP STRAIN BS BP ACC SIZE GC SCAFFOLDS CDS
@@ -31,8 +32,11 @@ do
 OUTNAME=$ACC.$GENUS.$SP
 
 mkdir -p $DB
-mkdir -p $OUT
+mkdir -p $CAP
+mkdir -p $REP
 
-blastp -query $INDIR/$ACC/${OUTNAME}.protein.faa -db $DB/UNIPROT_CRESS -outfmt 6 -max_hsps 1 -max_target_seqs 1 > $OUT/$OUTNAME.tsv
+blastp -query $INDIR/$ACC/${OUTNAME}.protein.faa -db $DB/CAP -outfmt 6 -evalue 0.00001 -max_hsps 1 -max_target_seqs 1 > $CAP/$OUTNAME.tsv
+
+blastp -query $INDIR/$ACC/${OUTNAME}.protein.faa -db $DB/REP -outfmt 6 -evalue 0.00001 -max_hsps 1 -max_target_seqs 1 > $REP/$OUTNAME.tsv
 
 done
