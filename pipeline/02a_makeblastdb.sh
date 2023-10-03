@@ -17,7 +17,10 @@ OUT=Queries
 mkdir -p $DB
 mkdir -p $OUT
 
-#cat $UNIPROT_DB/uniprot_sprot.fasta $OUT/Capsid.prots.fasta $OUT/Rep.prots.fasta > $OUT/CRESS_Uniprot_sprot.fasta
+#Add CAP and REP Identifiers to the fasta files
+
+perl -pi -e "s/^>/>CRESS_CAPSID-/g" $OUT/Capsid.prots.fasta
+perl -pi -e "s/^>/>CRESS_REP-/g" $OUT/Rep.prots.fasta
 
 makeblastdb -in $OUT/Capsid.prots.fasta -dbtype prot -out $DB/CAP
 makeblastdb -in $OUT/Rep.prots.fasta -dbtype prot -out $DB/REP
