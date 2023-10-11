@@ -33,8 +33,8 @@ OUTNAME=$ACC.$GENUS.$SP
 
 samtools faidx $INDIR/$ACC/*genomic.fna
 
-bedtools makewindows -g $INDIR/$ACC/*genomic.fna.fai -w 100 > $INDIR/$ACC/${OUTNAME}.100w.bed
+bedtools makewindows -g $INDIR/$ACC/*genomic.fna.fai -w 50 > $INDIR/$ACC/${OUTNAME}.50w.bed
 
-bedtools nuc -fi $INDIR/$ACC/*genomic.fna -bed $INDIR/$ACC/${OUTNAME}.100w.bed > $INDIR/$ACC/${OUTNAME}.GC_100.tsv
+bedtools nuc -fi $INDIR/$ACC/*genomic.fna -bed $INDIR/$ACC/${OUTNAME}.50w.bed > $INDIR/$ACC/${OUTNAME}.GC_50.tsv
 
 done

@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -p short -N 1 -n 16 --mem 16gb --out logs/subset_genes.%a.log
+#SBATCH -p short -N 1 -n 16 --mem 16gb --out logs/subset_exon.%a.log
 
 CPU=$SLURM_CPUS_ON_NODE
 
@@ -26,5 +26,5 @@ do
 
 OUTNAME=$ACC.$GENUS.$SP
 
-awk '$3 == "gene"' $INDIR/$ACC/${OUTNAME}.gff| cut -f1,4,5,7,9 > $INDIR/$ACC/${OUTNAME}.genes.bed
+awk '$3 == "exon"' $INDIR/$ACC/${OUTNAME}.gff| cut -f1,4,5,7,9 > $INDIR/$ACC/${OUTNAME}.exons.bed
 done
