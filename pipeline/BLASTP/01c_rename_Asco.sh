@@ -17,14 +17,15 @@ if [ ! $N ]; then
     fi
 fi
 
-
 INDIR=ncbi_dataset/data
 
+#mkdir ncbi_dataset/Ascomycota
+
 IFS=,
-tail -n +2 metadata/EDF_NCBI_ACC.csv | sed -n ${N}p | while read GENUS SP STRAIN BS BP ACC SIZE GC SCAFFOLD CDS PHY
+tail -n +2 metadata/Ascomycota_7_NCBI_ACC.csv | sed -n ${N}p | while read ROW GENUS PHY SUBPHY CLASS FAM SP STRAIN ACC NA
 do
 
-OUTDIR=ncbi_dataset/$PHY/$ACC
+OUTDIR=ncbi_dataset/Ascomycota/$SUBPHY/$ACC
 mkdir -p $OUTDIR
 
 OUTNAME=$ACC.$GENUS.$SP

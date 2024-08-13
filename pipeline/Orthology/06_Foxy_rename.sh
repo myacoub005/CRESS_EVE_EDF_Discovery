@@ -17,20 +17,17 @@ if [ ! $N ]; then
     fi
 fi
 
+INDIR=Foxy_orthology/ncbi_dataset/data
 
-INDIR=ncbi_dataset/data
+#mkdir ncbi_dataset/Ascomycota
 
 IFS=,
-tail -n +2 metadata/EDF_NCBI_ACC.csv | sed -n ${N}p | while read GENUS SP STRAIN BS BP ACC SIZE GC SCAFFOLD CDS PHY
+tail -n +2 Foxy_orthology/Foxy_Query_ACC.csv | sed -n ${N}p | while read ROW GENUS PHY SUBPHY CLASS FAM SP STRAIN ACC NA
 do
 
-OUTDIR=ncbi_dataset/$PHY/$ACC
-mkdir -p $OUTDIR
+OUTDIR=$INDIR/$ACC
 
-OUTNAME=$ACC.$GENUS.$SP
+OUTNAME=$ACC.$GENUS.$SP.$STRAIN
 
-mv $INDIR/$ACC/*gff $OUTDIR/${OUTNAME}.gff
 mv $INDIR/$ACC/cds_from_genomic.fna $OUTDIR/${OUTNAME}.cds.fasta
-mv $INDIR/$ACC/protein.faa $OUTDIR/${OUTNAME}.protein.faa
-mv $INDIR/$ACC/*genomic.fna $OUTDIR/${OUTNAME}.genomic.fna
 done

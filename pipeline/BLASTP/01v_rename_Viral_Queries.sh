@@ -17,20 +17,20 @@ if [ ! $N ]; then
     fi
 fi
 
+INDIR=Queries/ncbi_dataset/data
 
-INDIR=ncbi_dataset/data
+#mkdir ncbi_dataset/Ascomycota
 
 IFS=,
-tail -n +2 metadata/EDF_NCBI_ACC.csv | sed -n ${N}p | while read GENUS SP STRAIN BS BP ACC SIZE GC SCAFFOLD CDS PHY
+tail -n +2 Queries/Viral_ACC3.csv | sed -n ${N}p | while read ACC ASM SP FAM
 do
 
-OUTDIR=ncbi_dataset/$PHY/$ACC
+OUTDIR=Queries/ncbi_dataset/$FAM/$ACC
 mkdir -p $OUTDIR
 
-OUTNAME=$ACC.$GENUS.$SP
+OUTNAME=$ACC.$SP
 
 mv $INDIR/$ACC/*gff $OUTDIR/${OUTNAME}.gff
 mv $INDIR/$ACC/cds_from_genomic.fna $OUTDIR/${OUTNAME}.cds.fasta
 mv $INDIR/$ACC/protein.faa $OUTDIR/${OUTNAME}.protein.faa
-mv $INDIR/$ACC/*genomic.fna $OUTDIR/${OUTNAME}.genomic.fna
 done

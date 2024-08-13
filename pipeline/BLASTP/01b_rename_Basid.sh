@@ -20,17 +20,20 @@ fi
 
 INDIR=ncbi_dataset/data
 
+mkdir -p $OUTDIR
+
 IFS=,
-tail -n +2 metadata/EDF_NCBI_ACC.csv | sed -n ${N}p | while read GENUS SP STRAIN BS BP ACC SIZE GC SCAFFOLD CDS PHY
+tail -n +2 metadata/Basidiomycota_NCBI_ACC.csv | sed -n ${N}p | while read GENUS PHY SP STR ACC NA
 do
 
-OUTDIR=ncbi_dataset/$PHY/$ACC
+OUTDIR=ncbi_dataset/Basidiomycota/$ACC
 mkdir -p $OUTDIR
 
 OUTNAME=$ACC.$GENUS.$SP
 
 mv $INDIR/$ACC/*gff $OUTDIR/${OUTNAME}.gff
-mv $INDIR/$ACC/cds_from_genomic.fna $OUTDIR/${OUTNAME}.cds.fasta
+mv $INDIR/$ACC/cds_from_genomic.fna $OUTDIR//${OUTNAME}.cds.fasta
 mv $INDIR/$ACC/protein.faa $OUTDIR/${OUTNAME}.protein.faa
 mv $INDIR/$ACC/*genomic.fna $OUTDIR/${OUTNAME}.genomic.fna
+
 done

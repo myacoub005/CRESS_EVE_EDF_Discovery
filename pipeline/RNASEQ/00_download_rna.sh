@@ -3,13 +3,26 @@
 
 module load sratoolkit
 
-OUTDIR=RNA_fastq
+OUTDIR=RNAseq
 
 mkdir -p $OUTDIR
 
-cd $OUTDIR
+REF=$OUTDIR/ref
 
-fastq-dump --split-files --origfmt --gzip SRR1979257	
-fastq-dump --split-files --origfmt --gzip SRR1979256	
-fastq-dump --split-files --origfmt --gzip SRR1979255
+FASTQ=$OUTDIR/fastq
 
+mkdir $FASTQ
+cd $FASTQ
+
+#fastq-dump --split-files --origfmt --gzip SRR1979257	
+#fastq-dump --split-files --origfmt --gzip SRR1979256	
+#fastq-dump --split-files --origfmt --gzip SRR1979255
+fastq-dump --split-files --origfmt --gzip SRR1979264
+fastq-dump --split-files --origfmt --gzip SRR1979265
+fastq-dump --split-files --origfmt --gzip SRR1979266
+
+cd ..
+
+mkdir -p $REF
+
+cp ncbi_dataset/data/GCA_003550325.1/GCA_003550325.1_ASM355032v1_genomic.fna $REF/
