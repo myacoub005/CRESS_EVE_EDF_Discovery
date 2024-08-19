@@ -1,0 +1,13 @@
+Genome	Gene	ACC	start	end	Domain	from	to	strand	orientation
+z_Porcine_circovirus_2	Rep	GCA_004096935.1	0	314	RNA_Helicase	171	257	forward	1
+z_Porcine_circovirus_2	Rep	GCA_004096935.1	0	314	Endonuclease	16	100	forward	1
+y_Milk_vetch_dwarf_virus	Rep	GCA_000840045.1	0	286	RNA_Helicase	176	269	forward	1
+y_Milk_vetch_dwarf_virus	Rep	GCA_000840045.1	0	286	Endonuclease	5	83	forward	1
+c_Saccharomyces_pastorianus	Rep	GCA_001483335.1	0	254	RNA_Helicase	41	126	reverse	-1
+c_Saccharomyces_pastorianus	Rep	GCA_001483335.1	0	254	Endonuclease	196	245	reverse	-1
+d_Zoophagus_insidians	Rep	GCA_004114325.1	0	387	RNA_Helicase	252	340	forward	1
+d_Zoophagus_insidians	Rep	GCA_004114325.1	0	387	Endonuclease	94	181	forward	1
+e_Boothiomyces_macroporosus	Rep	GCA_027604185.1	0	129	RNA_Helicase	8	85	reverse	-1
+e_Pancytospora_epiphaga	Rep	GCA_024243955.1	0	137	RNA_Helicase	9	87	reverse	-1
+f_Scutellospora_calospora	Rep	GCA_910592325.1	0	511	RNA_Helicase	28	117	reverse	-1
+f_Scutellospora_calospora	Rep	GCA_910592325.1	0	511	RNA_Helicase	183	242	reverse	-1

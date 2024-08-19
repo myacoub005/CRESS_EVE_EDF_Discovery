@@ -1,0 +1,13 @@
+seq_id	start	end	strand	Function	Organism
+JAKELM010000019.1	157	892	+	Rhodopsin	Fungal
+JAKELM010000019.1	2000	2725	-	EVE_REP	Viral
+JACWCA010001204.1	0	904	+	Rhodopsin	Fungal
+JACWCA010001204.1	931	1456	+	Leucine_Zipper	Fungal
+JACWCA010001204.1	2000	2725	-	EVE_REP	Viral
+JACWCA010001204.1	3350	4725	-	Centromere_Protein_B	Fungal
+JAOQAX010000044.1	0	285	-	Uncharacterized	Fungal
+JAOQAX010000044.1	1528	1704	+	Rhodopsin	Fungal
+JAOQAX010000044.1	2177	2551	+	Plasma_membrane_protein_YRO2	Fungal
+JAVENW010000013.1	0	66	+	Leucine_Zipper	Fungal
+JAVENW010000013.1	3863	4886	-	Nitrogen_Regulatory_protein_A	Fungal
+JAVENW010000013.1	6086	6578	+	Rhodopsin	Fungal
